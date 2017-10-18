@@ -87,7 +87,7 @@
 
             <!--BEGIN: logo-->
             <div class="span3 logo">
-                <a href="./index.html"><img src="images/logo.png" alt="logo" /></a>
+                <a href="./index.html"><img src="${pageContext.request.contextPath }/res/images/logo.png" alt="logo" /></a>
             </div><!--END: logo-->
 
             <!--BEGIN: search&phone content-->
@@ -215,17 +215,17 @@
         <ul class="slides">
 
             <li>
-                <img src="images/example/slider1.jpg" alt="photo" />
+                <img src="${pageContext.request.contextPath }/res/images/example/slider1.jpg" alt="photo" />
                 <h3><a href="#">Great design and the best ideas. Dolor sit amet, consectetur adipiscing elit.Aliquam varius sapien porttitor</a></h3>
             </li>
 
             <li>
-                <img src="images/example/slider2.jpg" alt="photo" />
+                <img src="${pageContext.request.contextPath }/res/images/example/slider2.jpg" alt="photo" />
                 <h3><a href="#">Great design and the best ideas Dolor sit amet, consectetur adipiscing elit. Aliquam varius sapien porttitor dui lobortis</a></h3>
             </li>
 
             <li>
-                <img src="images/example/slider3.jpg" alt="photo" />
+                <img src="${pageContext.request.contextPath }/res/images/example/slider3.jpg" alt="photo" />
                 <h3><a href="#">Great design and the best ideas. Dolor sit amet, consectetur adipiscing elit</a></h3>
             </li>
 
@@ -273,49 +273,49 @@
                         <ul class="da-thumbs">
 
                             <li>
-                                <img src="images/example/latest1.jpg" />
+                                <img src="${pageContext.request.contextPath }/res/images/example/latest1.jpg" />
                                 <div>
-                                    <a href="images/example/view.jpg" class="p-view" data-rel="prettyPhoto"></a>
+                                    <a href="${pageContext.request.contextPath }/res/images/example/view.jpg" class="p-view" data-rel="prettyPhoto"></a>
                                     <a href="portfolio-single.html" class="p-link"></a>
                                 </div>
                             </li>
 
                             <li>
-                                <img src="images/example/latest2.jpg" />
+                                <img src="${pageContext.request.contextPath }/res/images/example/latest2.jpg" />
                                 <div>
-                                    <a href="images/example/view.jpg" class="p-view" data-rel="prettyPhoto"></a>
+                                    <a href="${pageContext.request.contextPath }/res/images/example/view.jpg" class="p-view" data-rel="prettyPhoto"></a>
                                     <a href="portfolio-single.html" class="p-link"></a>
                                 </div>
                             </li>
 
                             <li>
-                                <img src="images/example/latest3.jpg" />
+                                <img src="${pageContext.request.contextPath }/res/images/example/latest3.jpg" />
                                 <div>
-                                    <a href="images/example/view.jpg" class="p-view" data-rel="prettyPhoto"></a>
+                                    <a href="${pageContext.request.contextPath }/res/images/example/view.jpg" class="p-view" data-rel="prettyPhoto"></a>
                                     <a href="portfolio-single.html" class="p-link"></a>
                                 </div>
                             </li>
 
                             <li>
-                                <img src="images/example/latest4.jpg" />
+                                <img src="${pageContext.request.contextPath }/res/images/example/latest4.jpg" />
                                 <div>
-                                    <a href="images/example/view.jpg" class="p-view" data-rel="prettyPhoto"></a>
+                                    <a href="${pageContext.request.contextPath }/res/images/example/view.jpg" class="p-view" data-rel="prettyPhoto"></a>
                                     <a href="portfolio-single.html" class="p-link"></a>
                                 </div>
                             </li>
 
                             <li>
-                                <img src="images/example/latest5.jpg" />
+                                <img src="${pageContext.request.contextPath }/res/images/example/latest5.jpg" />
                                 <div>
-                                    <a href="images/example/view.jpg" class="p-view" data-rel="prettyPhoto"></a>
+                                    <a href="${pageContext.request.contextPath }/res/images/example/view.jpg" class="p-view" data-rel="prettyPhoto"></a>
                                     <a href="portfolio-single.html" class="p-link"></a>
                                 </div>
                             </li>
 
                             <li>
-                                <img src="images/example/latest6.jpg" />
+                                <img src="${pageContext.request.contextPath }/res/images/example/latest6.jpg" />
                                 <div>
-                                    <a href="images/example/view.jpg" class="p-view" data-rel="prettyPhoto"></a>
+                                    <a href="${pageContext.request.contextPath }/res/images/example/view.jpg" class="p-view" data-rel="prettyPhoto"></a>
                                     <a href="portfolio-single.html" class="p-link"></a>
                                 </div>
                             </li>
@@ -345,7 +345,7 @@
 
             <!--BEGIN: latest blog col 1 -->
             <article class="span3">
-                <img src="images/example/latest8.jpg" alt="photo" />
+                <img src="${pageContext.request.contextPath }/res/images/example/latest8.jpg" alt="photo" />
                 <p class="l-meta"><span>By Designmd  / On 05. 06. 2012 / In <a href="#">News</a></span></p>
                 <h4 class="title"><a href="#">Ut in lacus rhoncus elit egestas</a></h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus. Nullam at lectus augue. Ut tristique </p>
@@ -354,7 +354,7 @@
 
             <!--BEGIN: latest blog col 2 -->
             <article class="span3">
-                <img src="images/example/latest7.jpg" alt="photo" />
+                <img src="${pageContext.request.contextPath }/res/images/example/latest7.jpg" alt="photo" />
                 <p class="l-meta"><span>By Designmd  / On 05. 06. 2012 / In <a href="#">News</a></span></p>
                 <h4 class="title"><a href="#">Ut in lacus rhoncus elit egestas</a></h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus. Nullam at lectus augue. Ut tristique </p>
@@ -363,7 +363,7 @@
 
             <!--BEGIN: latest blog col 3 -->
             <article class="span3">
-                <img src="images/example/latest6.jpg" alt="photo" />
+                <img src="${pageContext.request.contextPath }/res/images/example/latest6.jpg" alt="photo" />
                 <p class="l-meta"><span>By Designmd  / On 05. 06. 2012 / In <a href="#">News</a></span></p>
                 <h4 class="title"><a href="#">Ut in lacus rhoncus elit egestas</a></h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus. Nullam at lectus augue. Ut tristique </p>
@@ -372,7 +372,7 @@
 
             <!--BEGIN: latest blog col 4 -->
             <article class="span3">
-                <img src="images/example/latest5.jpg" alt="photo" />
+                <img src="${pageContext.request.contextPath }/res/images/example/latest5.jpg" alt="photo" />
                 <p class="l-meta"><span>By Designmd  / On 05. 06. 2012 / In <a href="#">News</a></span></p>
                 <h4 class="title"><a href="#">Ut in lacus rhoncus elit egestas</a></h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus. Nullam at lectus augue. Ut tristique </p>
@@ -533,7 +533,7 @@
                                     Curabitur condimentum justo sed urna porttitor aliquam.
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                 </p>
-                                <img src="images/example/testimonials.jpg" alt="images" />
+                                <img src="${pageContext.request.contextPath }/res/images/example/testimonials.jpg" alt="images" />
                                 <h4>Jhon Doe <small>Compani Inc.</small></h4>
 
                             </li>
@@ -544,7 +544,7 @@
                                     Nullam at lectus augue. Ut tristique consectetur elit, sed tincidunt elit iaculis in. In hac habitasse platea dictumst.
                                     Curabitur condimentum justo sed urna porttitor aliquam.
                                 </p>
-                                <img src="images/example/testimonials.jpg" alt="images" />
+                                <img src="${pageContext.request.contextPath }/res/images/example/testimonials.jpg" alt="images" />
                                 <h4>Jhon Doe <small>Compani Inc.</small></h4>
 
                             </li>
@@ -556,7 +556,7 @@
                                     Curabitur condimentum justo sed urna porttitor aliquam.
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus.
                                 </p>
-                                <img src="images/example/testimonials.jpg" alt="images" />
+                                <img src="${pageContext.request.contextPath }/res/images/example/testimonials.jpg" alt="images" />
                                 <h4>Jhon Doe <small>Compani Inc.</small></h4>
 
                             </li>
@@ -586,12 +586,12 @@
 
             <!--BEGIN: client-->
             <ul id="client">
-                <li class="span2"><a href="#"><img src="images/client/1.png" alt="photo" /></a></li>
-                <li class="span2"><a href="#"><img src="images/client/2.png" alt="photo" /></a></li>
-                <li class="span2"><a href="#"><img src="images/client/3.png" alt="photo" /></a></li>
-                <li class="span2"><a href="#"><img src="images/client/4.png" alt="photo" /></a></li>
-                <li class="span2"><a href="#"><img src="images/client/5.png" alt="photo" /></a></li>
-                <li class="span2"><a href="#"><img src="images/client/6.png" alt="photo" /></a></li>
+                <li class="span2"><a href="#"><img src="${pageContext.request.contextPath }/res/images/client/1.png" alt="photo" /></a></li>
+                <li class="span2"><a href="#"><img src="${pageContext.request.contextPath }/res/images/client/2.png" alt="photo" /></a></li>
+                <li class="span2"><a href="#"><img src="${pageContext.request.contextPath }/res/images/client/3.png" alt="photo" /></a></li>
+                <li class="span2"><a href="#"><img src="${pageContext.request.contextPath }/res/images/client/4.png" alt="photo" /></a></li>
+                <li class="span2"><a href="#"><img src="${pageContext.request.contextPath }/res/images/client/5.png" alt="photo" /></a></li>
+                <li class="span2"><a href="#"><img src="${pageContext.request.contextPath }/res/images/client/6.png" alt="photo" /></a></li>
             </ul><!--END: client-->
         </div>
 
