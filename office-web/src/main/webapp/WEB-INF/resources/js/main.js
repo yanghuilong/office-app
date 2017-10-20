@@ -21,49 +21,17 @@ $(document).ready(function(){
     prettyPrint();
 
 
-    //Menu
-    jQuery('#menu > ul').superfish({ 
-        delay:       1000,                           
-        animation:   {opacity:'show', height:'show'}, 
-        speed:       'fast',                          
-        autoArrows:  true
-
-    });
     $('.sf-sub-indicator').remove();
-    (function() {
-		var $menu = $('#menu ul'),
-			optionsList = '<option value="" selected>Menu...</option>';
 
-		$menu.find('li').each(function() {
-			var $this   = $(this),
-				$anchor = $this.children('a'),
-				depth   = $this.parents('ul').length - 1,
-				indent  = '';
 
-			if( depth ) {
-				while( depth > 0 ) {
-					indent += ' - ';
-					depth--;
-				}
-			}
-			optionsList += '<option value="' + $anchor.attr('href') + '">' + indent + ' ' + $anchor.text() + '</option>';
-		}).end()
-		  .after('<select class="res-menu">' + optionsList + '</select>');
-
-		$('.res-menu').on('change', function() {
-			window.location = $(this).val();
-		});
-		
-	})();
-    
-    $(".latest-blog article").hover(function () {						 
+  $(".latest-blog article").hover(function () {
     	$(this).find("img").stop(true, true).animate({ opacity: 0.7 }, 300);
     }, function() {
     	$(this).find("img").stop(true, true).animate({ opacity: 1 }, 300);
     });
-    
-    
-    //FOOTER FLICKR
+
+
+	/*//FOOTER FLICKR
     $('#footer .flickr').jflickrfeed({
 		limit: 6,
 		qstrings: {
@@ -105,11 +73,11 @@ $(document).ready(function(){
     	   $(this).find("img").stop(true, true).animate({ opacity: 1.0 }, 800);
         });
 	});
-
+*/
 
 	//FILTRABLE PORTFOLIO
 	var $portfolioClone = $(".filtrable").clone();
-	$("#filtrable a").live('click', function(e){
+	$("#filtrable a").on('click', function(e){
 		
 		$("#filtrable li").removeClass("current");	
 		

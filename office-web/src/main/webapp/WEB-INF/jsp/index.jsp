@@ -1,50 +1,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!-- # ------------------------------------------------------------------
-# kickassGFX.net - Best Graphic Source - Free Themes, Scripts & Plugins
-# -----------------------------------------------------------------------
-# This file has been downloaded from KickassGFX.net
-# Homepage: http://www.kickassgfx.net/
-# -----------------------------------------------------------------------
-# You'll find your Updates everyday at KickassGFX.net
-# -----------------------------------------------------------------------
-# If you need support with this template you can
-# contact us at   http://www.kickassgfx.net/
-# ------------------------------------------------------------------- -->
-
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-
     <!-- BEGIN: basic page needs -->
-
     <meta name="viewport" content="width=100%; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;" />
     <title>Home Page - Downloaded from KickassGFX.net</title>
     <!-- END: basic page needs -->
-
     <!-- BEGIN: css -->
     <link href="${pageContext.request.contextPath }/res/css/bootstrap.css" type="text/css" rel="stylesheet" />
     <link href="${pageContext.request.contextPath }/res/css/style.css" type="text/css" rel="stylesheet" />
     <link href="${pageContext.request.contextPath }/res/css/bootstrap-responsive.css" type="text/css" rel="stylesheet" />
     <link href="${pageContext.request.contextPath }/res/css/responsive.css" type="text/css" rel="stylesheet" />
     <link href="${pageContext.request.contextPath }/res/css/prettyPhoto.css" type="text/css" rel="stylesheet" />
+    <link href="https://cdn.bootcss.com/superfish/1.7.9/css/superfish.min.css" rel="stylesheet">
     <!-- END: css -->
-
+    <jsp:include page="common/script.jsp"></jsp:include>
     <!-- BEGIN: js -->
-    <script src="https://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath }/res/js/google-code-prettify/prettify.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath }/res/js/bootstrap.js"></script>
-    <script src="https://cdn.bootcss.com/superfish/1.7.9/js/superfish.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath }/res/js/hoverIntent.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath }/res/js/jquery.hoverdir.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath }/res/js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath }/res/js/jflickrfeed.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath }/res/js/jquery.prettyPhoto.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath }/res/js/jquery.elastislide.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath }/res/js/jquery.tweet.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath }/res/js/main.js"></script>
+
     <!-- END: js -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
@@ -79,134 +54,8 @@
 
 
 <!--BEGIN: header-->
-<header id="header">
-    <div class="container">
-
-        <!-- BEGIN: row -->
-        <div class="row">
-
-            <!--BEGIN: logo-->
-            <div class="span3 logo">
-                <a href="./index.html"><img src="${pageContext.request.contextPath }/res/images/logo.png" alt="logo" /></a>
-            </div><!--END: logo-->
-
-            <!--BEGIN: search&phone content-->
-            <div class="span9 hidden-phone">
-
-                <!--BEGIN: phone -->
-                <span class="phone">Call US (999) 123 - 325 - 456</span>
-                <!--END: phone-->
-
-                <div class="clear"></div>
-
-                <!--BEGIN: search-->
-                <form id="search" />
-                <p><input type="text" name="search site" value="Search..." onfocus="if(this.value=='Search...') this.value=''" onblur="if(this.value=='') this.value='Search...'" /></p>
-                <p><input type="submit" name="submit" value="" class="search-bt" /></p>
-                </form><!--END search-->
-
-            </div><!--END: search&phone -->
-
-        </div><!-- END: row -->
-
-        <!--BEGIN: menu-->
-        <nav id="menu">
-            <ul>
-
-                <li><a href="./index.html" class="current">Home</a>
-                    <ul>
-                        <li><a href="./index2.html">Index Style 2</a></li>
-                        <li class="last"><a href="./index3.html">Index Style 3</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Page</a>
-                    <ul>
-                        <li><a href="./about.html">About</a></li>
-                        <li><a href="./services.html">Service</a></li>
-                        <li class="last"><a href="./team.html">Team</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Portfolio</a>
-                    <ul>
-                        <li><a href="#">Portfolio 2 col</a>
-                            <ul>
-                                <li><a href="./portfolio-2col.html">Portfolio no sidebar</a></li>
-                                <li><a href="./portfolio-2col-sb.html">Portfolio 2 sidebar</a></li>
-                                <li><a href="./portfolio-2col-sl.html">Portfolio left sidebar</a></li>
-                                <li><a href="./portfolio-2col-sr.html">Portfolio right sidebar</a></li>
-                                <li><a href="./portfolio-2col-d.html">Portfolio no sidebar + description</a></li>
-                                <li><a href="./portfolio-2col-dsb.html">Portfolio 2 sidebar + description</a></li>
-                                <li><a href="./portfolio-2col-dsl.html">Portfolio left sidebar + description</a></li>
-                                <li class="last"><a href="./portfolio-2col-dsr.html">Portfolio right sidebar + description</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Portfolio 3 col</a>
-                            <ul>
-                                <li><a href="./portfolio-3col.html">Portfolio no sidebar</a></li>
-                                <li><a href="./portfolio-3col-sb.html">Portfolio 2 sidebar</a></li>
-                                <li><a href="./portfolio-3col-sl.html">Portfolio left sidebar</a></li>
-                                <li><a href="./portfolio-3col-sr.html">Portfolio right sidebar</a></li>
-                                <li><a href="./portfolio-3col-d.html">Portfolio no sidebar + description</a></li>
-                                <li><a href="./portfolio-3col-dsb.html">Portfolio 2 sidebar + description</a></li>
-                                <li><a href="./portfolio-3col-dsl.html">Portfolio left sidebar + description</a></li>
-                                <li class="last"><a href="./portfolio-3col-dsr.html">Portfolio right sidebar + description</a></li>
-                            </ul>
-                        </li>
-                        <li class="last"><a href="#">Portfolio 4 col</a>
-                            <ul>
-                                <li><a href="./portfolio-4col.html">Portfolio</a></li>
-                                <li class="last"><a href="./portfolio-4col-d.html">Portfolio + description</a></li>
-                            </ul>
-                        </li>
-                        <li class="last"><a href="#">Portfolio Single</a>
-                            <ul>
-                                <li><a href="./portfolio-single.html">Single Style 1</a></li>
-                                <li class="last"><a href="./portfolio-single2.html">Single Style 2</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="#">Blog</a>
-                    <ul>
-                        <li><a href="#">Blog Style 1</a>
-                            <ul>
-                                <li><a href="./blog-1f.html">Blog no sidebar</a></li>
-                                <li><a href="./blog-1b.html">Blog 2 sidebar</a></li>
-                                <li><a href="./blog-1l.html">Blog left sidebar</a></li>
-                                <li class="last"><a href="./blog-1r.html">Blog right sidebar</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Blog Style 2</a>
-                            <ul>
-                                <li><a href="./blog-2b.html">Blog 2 sidebar</a></li>
-                                <li><a href="./blog-2l.html">PBlog left sidebar</a></li>
-                                <li class="last"><a href="./blog-2r.html">Blog right sidebar</a></li>
-                            </ul>
-                        </li>
-                        <li class="last"><a href="#">Blog Single</a>
-                            <ul>
-                                <li><a href="./blog-single.html">Single no sidebar</a></li>
-                                <li><a href="./blog-single-l.html">Single left sidebar</a></li>
-                                <li class="last"><a href="./blog-single-r.html">Single right sidebar</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="#">Shortcodes</a>
-                    <ul>
-                        <li><a href="./sc-base-css.html">Base css</a></li>
-                        <li><a href="./sc-scaffolding.html">Scaffolding</a></li>
-                        <li><a href="./sc-components.html">Components</a></li>
-                        <li class="last"><a href="./sc-jquery-plugins.html">jQuery plugins</a></li>
-                    </ul>
-                </li>
-                <li><a href="./contact.html">Contact</a></li>
-
-            </ul>
-        </nav><!--END: menu-->
-
-    </div>
-</header><!--END: header-->
+<jsp:include page="common/header.jsp" flush="true"></jsp:include>
+<!--END: header-->
 <div class="inner_copyright">Collect from <a href="http://www.cssmoban.com/" target="_blank" title="网页模板">网页模板</a></div>
 
 <!--BEGIN: slider-->
@@ -215,23 +64,24 @@
         <ul class="slides">
 
             <li>
-                <img src="${pageContext.request.contextPath }/res/images/example/slider1.jpg" alt="photo" />
+                <img src="${pageContext.request.contextPath }/res/images/example/portfolio-single2.jpg" alt="photo" />
                 <h3><a href="#">Great design and the best ideas. Dolor sit amet, consectetur adipiscing elit.Aliquam varius sapien porttitor</a></h3>
             </li>
 
             <li>
-                <img src="${pageContext.request.contextPath }/res/images/example/slider2.jpg" alt="photo" />
+                <img src="${pageContext.request.contextPath }/res/images/example/portfolio-single2.jpg" alt="photo" />
                 <h3><a href="#">Great design and the best ideas Dolor sit amet, consectetur adipiscing elit. Aliquam varius sapien porttitor dui lobortis</a></h3>
             </li>
 
             <li>
-                <img src="${pageContext.request.contextPath }/res/images/example/slider3.jpg" alt="photo" />
+                <img src="${pageContext.request.contextPath }/res/images/example/portfolio-single2.jpg" alt="photo" />
                 <h3><a href="#">Great design and the best ideas. Dolor sit amet, consectetur adipiscing elit</a></h3>
             </li>
 
         </ul>
     </div>
-</section><!--END: slider-->
+</section>
+<!--END: slider-->
 
 
 <!--BEGIN: container-->
@@ -251,7 +101,6 @@
 
         <!--BEGIN: latest work-->
         <div class="row">
-
             <div class="span3">
                 <!--BEGIN: divider arrow-->
                 <div class="title-divider">
@@ -264,7 +113,6 @@
                     Ut in lacus rhoncus elit egestas luctus. Nullam at lectus augue.
                     Ut tristique consectetur elit, sed tincidunt elit iaculis in.
                 </p>
-
                 <a href="#" class="btn hidden-phone">Read More</a>
             </div>
             <div class="span9">
@@ -491,7 +339,7 @@
 
                 <div class="twitter"></div>
                 <script type="text/javascript">
-                    $(document).ready(function(){
+                    /*$(document).ready(function(){
                         //TWITTER
                         $(".twitter").tweet({
                             join_text: "auto",
@@ -505,7 +353,7 @@
                             auto_join_text_url: "we were checking out",
                             loading_text: "loading tweets..."
                         });
-                    });
+                    });*/
                 </script>
 
             </div><!--END: twitter-->

@@ -16,6 +16,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public String getString() {
-        return "yanghuilong";
+        return "yanghuilong12第三方发斯蒂芬";
     }
 }
