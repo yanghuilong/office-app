@@ -9,5 +9,5 @@ import com.yla.entity.User;
  * Date: 2017/10/19
  * Time: 16:22
  */
-public interface UserMapper extends BaseMapper<User>{
+public interface UserMapper  extends BaseMapper<User> {
 }

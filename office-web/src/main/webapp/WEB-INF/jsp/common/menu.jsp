@@ -10,7 +10,7 @@
 ${sessionScope.get("menu")}
 <ul>
     <li class="current">
-        <a href="${path}">Home</a>
+        <a href="${pageContext.request.contextPath }">Home</a>
     </li>
     <li>
         <a href="#">Production</a>

@@ -24,10 +24,6 @@
         </dependency>
         <dependency>
             <groupId>com.yla</groupId>
-            <artifactId>office-common</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.yla</groupId>
             <artifactId>office-dao</artifactId>
         </dependency>
         <dependency>
