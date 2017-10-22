@@ -1,15 +1,13 @@
 package com.yla.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import org.apache.logging.log4j.LogManager;
+import com.yla.utils.LogUtils;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.core.annotation.Order;
 
-import javax.activation.DataSource;
 import java.sql.SQLException;
 
 /**
@@ -19,8 +17,8 @@ import java.sql.SQLException;
  * Time: 13:50
  */
 @Configuration
-public class DruidDBConfig {
-    private Logger logger = LogManager.getLogger(DruidDBConfig.class);
+public class DruidDBConfig{
+    private Logger logger = LogUtils.getLog(DruidDBConfig.class);
 
     @Value("${spring.datasource.url}")
     private String dbUrl;
@@ -78,8 +76,7 @@ public class DruidDBConfig {
 
     @Bean     //声明其为Bean实例
     @Primary  //在同样的DataSource中，首先使用被标注的DataSource
-    @Order(1)
-    public DataSource dataSource(){
+    public javax.sql.DataSource getDataSource(){
         logger.debug("正在初始化... DruidDataSource ----- DruidDBConfig");
         DruidDataSource datasource = new DruidDataSource();
 
@@ -107,6 +104,6 @@ public class DruidDBConfig {
             logger.error("druid configuration initialization filter", e);
         }
         datasource.setConnectionProperties(connectionProperties);
-        return (DataSource) datasource;
+        return datasource;
     }
 }

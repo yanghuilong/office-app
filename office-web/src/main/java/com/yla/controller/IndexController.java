@@ -2,6 +2,8 @@ package com.yla.controller;
 
 import com.yla.entity.User;
 import com.yla.service.user.UserService;
+import com.yla.utils.IDWorker;
+import com.yla.utils.LogUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,8 +54,16 @@ public class IndexController {
                 .setPassWord("12122121")
                 .setFlag(true)
                 .setPhoneNo("13632776831")
-                .setUserNo("1001")
+                .setUserNo(IDWorker.getIdWorker().nextId()+"")
                 .setUserName("yanghuilong");
         return userService.insert(user);
     }
+
+    @GetMapping("/test/error")
+    @ResponseBody
+    public boolean error() throws Exception {
+            throw new Exception("未知错误！");
+    }
+
+
 }
