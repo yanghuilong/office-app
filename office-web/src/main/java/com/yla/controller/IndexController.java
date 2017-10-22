@@ -4,12 +4,14 @@ import com.yla.entity.User;
 import com.yla.service.user.UserService;
 import com.yla.utils.IDWorker;
 import com.yla.utils.LogUtils;
+import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.nio.charset.MalformedInputException;
 import java.util.Date;
 import java.util.Map;
 
@@ -62,7 +64,7 @@ public class IndexController {
     @GetMapping("/test/error")
     @ResponseBody
     public boolean error() throws Exception {
-            throw new Exception("未知错误！");
+            throw new NotFoundException("12");
     }
 
 

@@ -20,9 +20,18 @@ import javax.servlet.http.HttpServletRequest;
 public class GlobalExceptionAdvice extends ResponseEntityExceptionHandler{
 
     @ExceptionHandler(Exception.class)
+    @ResponseBody
     ResponseEntity<?> handleControllerException(HttpServletRequest request, Throwable ex) {
-        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
-        LogUtils.getLog(GlobalExceptionAdvice.class).error(ex.getMessage());
+        HttpStatus status = getStatus(request);
+        LogUtils.getLog(GlobalExceptionAdvice.class).error("未知错误：",ex);
         return new ResponseEntity<>(status);
+    }
+
+    private HttpStatus getStatus(HttpServletRequest request) {
+        Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
+        if (statusCode == null) {
+            return HttpStatus.INTERNAL_SERVER_ERROR;
+        }
+        return HttpStatus.valueOf(statusCode);
     }
 }
