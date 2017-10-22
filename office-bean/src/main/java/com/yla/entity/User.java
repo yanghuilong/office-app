@@ -15,7 +15,6 @@ public class User extends AbstractSampleEntity<Integer> {
 
     private static final long serialVersionUID = -6563014033851785954L;
 
-    private Integer id;
     private String userName;
     private String passWord;
     private String userNo;
@@ -23,14 +22,6 @@ public class User extends AbstractSampleEntity<Integer> {
     private Date createdDate;
     private String email;
     private String phoneNo;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getUserName() {
         return userName;

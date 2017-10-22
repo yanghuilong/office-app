@@ -1,5 +1,7 @@
 package com.yla.entity.common;
 
+import com.baomidou.mybatisplus.annotations.TableField;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -12,6 +14,7 @@ import java.util.Map;
 public abstract class AbstractSampleEntity<PK> implements GenericEntity<PK> {
     private PK id;
 
+    @TableField(exist = false)
     private Map<String, Object> properties;
 
     @Override
