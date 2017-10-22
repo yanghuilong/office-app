@@ -23,6 +23,9 @@ public class MyErrorViewResolver implements ErrorViewResolver {
             modelAndView.addObject("errorParam", model);
             modelAndView.setStatus(status);
             modelAndView.setViewName("error/404");
-            return modelAndView;
+        if (status.is5xxServerError()) {
+            modelAndView.setViewName("error/500");
+        }
+        return modelAndView;
     }
 }
