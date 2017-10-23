@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.entity.GlobalConfiguration;
 import com.baomidou.mybatisplus.enums.DBType;
 import com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.io.DefaultVFS;
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.logging.log4j2.Log4j2Impl;
