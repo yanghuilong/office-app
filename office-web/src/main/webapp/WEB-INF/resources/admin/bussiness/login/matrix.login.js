@@ -15,6 +15,10 @@ $(document).ready(function () {
         $("#loginform").fadeIn();
     });
 
+
+    /**
+     * 提交登录表单
+     */
     $("#loginform").validate({
         rules:{
             userName:{
@@ -46,26 +50,25 @@ $(document).ready(function () {
         },
         submitHandler: function(form)
         {
-            debugger
             $(form).ajaxSubmit({
-                type: 'post', // 提交方式 get/post
-                url: webcontent+"/admin/loginIn", // 需要提交的 url
-                data: {
-                    'userName': $("#userName").val(),
-                    'passWord': $("#passWord").val()
-                },
                 success: function(data) { // data 保存提交后返回的数据，一般为 json 数据
-                    // 此处可对 data 作相关处理
-                    debugger
-                    alert('提交成功！');
+                    if (data.status != 200) {
+                        // 此处可对 data 作相关处理
+                        $.gritter.add({
+                            title:	'Message',
+                            text:	data.message,
+                            sticky: false,
+                            time: 1000,
+                            speed:500
+                        });
+                        return
+                    }
+                    window.location.href = webpath+"/admin/home"
                 },
                 error: function (error) {
                 }
             });
         }
-    });
-    $('#loginSubmit').click(function () {
-
     });
 
     if ($.browser && $.browser.version.slice(0, 3) < 10) {

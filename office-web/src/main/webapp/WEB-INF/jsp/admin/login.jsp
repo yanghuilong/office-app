@@ -8,14 +8,15 @@
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/bootstrap-responsive.min.css" />
         <link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/matrix-login.css" />
         <link href="${pageContext.request.contextPath}/res/admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
-        <script src="${pageContext.request.contextPath}/res/admin/js/jquery.min.js"></script>
-        <script src="${pageContext.request.contextPath}/res/admin/js/jquery.validate.js"></script>
-        <script src="${pageContext.request.contextPath}/res/js/jquery.form.js"></script>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/jquery.gritter.css" />
         <%--<script src="${pageContext.request.contextPath}/res/admin/js/matrix.form_validation.js"></script>--%>
+        <script type="text/JavaScript">
+            var webpath = "${pageContext.request.contextPath}";
+        </script>
     </head>
     <body>
         <div id="loginbox">            
-            <form id="loginform" class="form-vertical" novalidate="novalidate">
+            <form id="loginform" class="form-vertical" action="${pageContext.request.contextPath}/admin/loginIn" method="post" novalidate="novalidate">
                 <div class="control-group normal_text"> <h3><img src="${pageContext.request.contextPath}/res/admin/img/logo.png" alt="Logo" /></h3></div>
                 <div class="control-group">
                     <div class="controls">
@@ -51,9 +52,11 @@
                 </div>
             </form>
         </div>
-        <script src="${pageContext.request.contextPath}/res/admin/bussiness/login/matrix.login.js">
-            var webpath = ${pageContext.request.contextPath}
-        </script>
+        <script src="${pageContext.request.contextPath}/res/admin/js/jquery.min.js"></script>
+        <script src="${pageContext.request.contextPath}/res/admin/js/jquery.gritter.min.js"></script>
+        <script src="${pageContext.request.contextPath}/res/admin/js/jquery.validate.js"></script>
+        <script src="${pageContext.request.contextPath}/res/js/jquery.form.js"></script>
+        <script src="${pageContext.request.contextPath}/res/admin/bussiness/login/matrix.login.js"></script>
     </body>
 
 </html>
