@@ -1,8 +1,10 @@
 package com.yla.controller.admin;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Created with IntelliJ IDEA
@@ -20,7 +22,8 @@ public class HomeController {
      * @return
      */
     @GetMapping("/home")
-    public String toHomePage() {
+    public String toHomePage(@RequestParam("menu") String menu, Model model) {
+        model.addAttribute("menu",menu);
         return "/admin/home";
     }
 }

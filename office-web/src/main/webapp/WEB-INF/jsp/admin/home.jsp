@@ -2,25 +2,31 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<title>Matrix Admin</title>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/bootstrap.min.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/bootstrap-responsive.min.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/fullcalendar.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/matrix-style.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/matrix-media.css" />
-<link href="${pageContext.request.contextPath}/res/admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/jquery.gritter.css" />
-<link href='http://fonts.useso.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+  <title>Matrix Admin</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/fullcalendar.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/matrix-style.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/matrix-media.css" />
+  <link href="${pageContext.request.contextPath}/res/admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/res/admin/css/jquery.gritter.css" />
+  <script src="${pageContext.request.contextPath}/res/admin/js/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath}/res/admin/js/jquery.ui.custom.js"></script>
+  <script src="${pageContext.request.contextPath}/res/admin/js/bootstrap.min.js"></script>
+  <%--<link href='http://fonts.useso.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>--%>
+  <script type="text/JavaScript">
+      var webpath = "${pageContext.request.contextPath}";
+  </script>
 </head>
 <body>
 
 <!--Header-part-->
 <div id="header">
-  <h1><a href="dashboard.html">Matrix Admin</a></h1>
+  <h1><a href="${pageContext.request.contextPath}/admin/home">Matrix Admin</a></h1>
 </div>
-<!--close-Header-part--> 
+<!--close-Header-part-->
 
 
 <!--top-Header-menu-->
@@ -59,66 +65,18 @@
 <!--close-top-serch-->
 <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >免费模板</a></div>
 <!--sidebar-menu-->
-<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
-  <ul>
-    <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
-    <li> <a href="charts.html"><i class="icon icon-signal"></i> <span>Charts &amp; graphs</span></a> </li>
-    <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>Widgets</span></a> </li>
-    <li><a href="tables.html"><i class="icon icon-th"></i> <span>Tables</span></a></li>
-    <li><a href="grid.html"><i class="icon icon-fullscreen"></i> <span>Full width</span></a></li>
-    <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span class="label label-important">3</span></a>
-      <ul>
-        <li><a href="form-common.html">Basic Form</a></li>
-        <li><a href="form-validation.html">Form with Validation</a></li>
-        <li><a href="form-wizard.html">Form with Wizard</a></li>
-      </ul>
-    </li>
-    <li><a href="buttons.html"><i class="icon icon-tint"></i> <span>Buttons &amp; icons</span></a></li>
-    <li><a href="interface.html"><i class="icon icon-pencil"></i> <span>Eelements</span></a></li>
-    <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Addons</span> <span class="label label-important">5</span></a>
-      <ul>
-        <li><a href="index2.html">Dashboard2</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="invoice.html">Invoice</a></li>
-        <li><a href="chat.html">Chat option</a></li>
-      </ul>
-    </li>
-    <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>Error</span> <span class="label label-important">4</span></a>
-      <ul>
-        <li><a href="error403.html">Error 403</a></li>
-        <li><a href="error404.html">Error 404</a></li>
-        <li><a href="error405.html">Error 405</a></li>
-        <li><a href="error500.html">Error 500</a></li>
-      </ul>
-    </li>
-    <li class="content"> <span>Monthly Bandwidth Transfer</span>
-      <div class="progress progress-mini progress-danger active progress-striped">
-        <div style="width: 77%;" class="bar"></div>
-      </div>
-      <span class="percent">77%</span>
-      <div class="stat">21419.94 / 14000 MB</div>
-    </li>
-    <li class="content"> <span>Disk Space Usage</span>
-      <div class="progress progress-mini active progress-striped">
-        <div style="width: 87%;" class="bar"></div>
-      </div>
-      <span class="percent">87%</span>
-      <div class="stat">604.44 / 4000 MB</div>
-    </li>
-  </ul>
-</div>
+<jsp:include page="common/leftMenu.jsp" flush="true"></jsp:include>
 <!--sidebar-menu-->
 
 <!--main-container-part-->
 <div id="content">
-<!--breadcrumbs-->
+  <!--breadcrumbs-->
   <div id="content-header">
     <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
   </div>
-<!--End-breadcrumbs-->
+  <!--End-breadcrumbs-->
 
-<!--Action boxes-->
+  <!--Action boxes-->
   <div class="container-fluid">
     <div class="quick-actions_homepage">
       <ul class="quick-actions">
@@ -135,9 +93,9 @@
 
       </ul>
     </div>
-<!--End-Action boxes-->    
+    <!--End-Action boxes-->
 
-<!--Chart-box-->    
+    <!--Chart-box-->
     <div class="row-fluid">
       <div class="widget-box">
         <div class="widget-title bg_lg"><span class="icon"><i class="icon-signal"></i></span>
@@ -162,7 +120,7 @@
         </div>
       </div>
     </div>
-<!--End-Chart-box--> 
+    <!--End-Chart-box-->
     <hr/>
     <div class="row-fluid">
       <div class="span6">
@@ -270,7 +228,7 @@
             <div class="new-update clearfix"> <i class="icon-question-sign"></i> <span class="update-notice"> <a title="" href="#"><strong>I am alwayse here if you have any question</strong></a> <span>we glad that you choose our template</span> </span> <span class="update-date"><span class="update-day">01</span>jan</span> </div>
           </div>
         </div>
-        
+
       </div>
       <div class="span6">
         <div class="widget-box widget-chat">
@@ -335,7 +293,7 @@
             <div class="accordion-heading">
               <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGOne" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
                 <h5>Accordion Example 1</h5>
-                </a> </div>
+              </a> </div>
             </div>
             <div class="collapse in accordion-body" id="collapseGOne">
               <div class="widget-content"> It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </div>
@@ -345,7 +303,7 @@
             <div class="accordion-heading">
               <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGTwo" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
                 <h5>Accordion Example 2</h5>
-                </a> </div>
+              </a> </div>
             </div>
             <div class="collapse accordion-body" id="collapseGTwo">
               <div class="widget-content">And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.</div>
@@ -355,7 +313,7 @@
             <div class="accordion-heading">
               <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGThree" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
                 <h5>Accordion Example 3</h5>
-                </a> </div>
+              </a> </div>
             </div>
             <div class="collapse accordion-body" id="collapseGThree">
               <div class="widget-content"> Waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just </div>
@@ -365,19 +323,19 @@
         <div class="widget-box collapsible">
           <div class="widget-title"> <a data-toggle="collapse" href="#collapseOne"> <span class="icon"><i class="icon-arrow-right"></i></span>
             <h5>Toggle, Open by default, </h5>
-            </a> </div>
+          </a> </div>
           <div id="collapseOne" class="collapse in">
             <div class="widget-content"> This box is opened by default, paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </div>
           </div>
           <div class="widget-title"> <a data-toggle="collapse" href="#collapseTwo"> <span class="icon"><i class="icon-remove"></i></span>
             <h5>Toggle, closed by default</h5>
-            </a> </div>
+          </a> </div>
           <div id="collapseTwo" class="collapse">
             <div class="widget-content"> This box is now open </div>
           </div>
           <div class="widget-title"> <a data-toggle="collapse" href="#collapseThree"> <span class="icon"><i class="icon-remove"></i></span>
             <h5>Toggle, closed by default</h5>
-            </a> </div>
+          </a> </div>
           <div id="collapseThree" class="collapse">
             <div class="widget-content"> This box is now open </div>
           </div>
@@ -418,9 +376,8 @@
 <!--end-Footer-part-->
 
 <script src="${pageContext.request.contextPath}/res/admin/js/excanvas.min.js"></script>
-<script src="${pageContext.request.contextPath}/res/admin/js/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/res/admin/js/jquery.ui.custom.js"></script>
-<script src="${pageContext.request.contextPath}/res/admin/js/bootstrap.min.js"></script>
+
+
 <script src="${pageContext.request.contextPath}/res/admin/js/jquery.flot.min.js"></script>
 <script src="${pageContext.request.contextPath}/res/admin/js/jquery.flot.resize.min.js"></script>
 <script src="${pageContext.request.contextPath}/res/admin/js/jquery.peity.min.js"></script>
@@ -440,28 +397,28 @@
 <script src="${pageContext.request.contextPath}/res/admin/js/matrix.tables.js"></script>
 
 <script type="text/javascript">
-  // This function is called from the pop-up menus to transfer to
-  // a different page. Ignore if the value returned is a null string:
-  function goPage (newURL) {
+    // This function is called from the pop-up menus to transfer to
+    // a different page. Ignore if the value returned is a null string:
+    function goPage (newURL) {
 
-      // if url is empty, skip the menu dividers and reset the menu selection to default
-      if (newURL != "") {
-      
-          // if url is "-", it is this page -- reset the menu:
-          if (newURL == "-" ) {
-              resetMenu();            
-          } 
-          // else, send page to designated URL            
-          else {  
-            document.location.href = newURL;
-          }
-      }
-  }
+        // if url is empty, skip the menu dividers and reset the menu selection to default
+        if (newURL != "") {
 
-// resets the menu selection upon entry to this page:
-function resetMenu() {
-   document.gomenu.selector.selectedIndex = 2;
-}
+            // if url is "-", it is this page -- reset the menu:
+            if (newURL == "-" ) {
+                resetMenu();
+            }
+            // else, send page to designated URL
+            else {
+                document.location.href = newURL;
+            }
+        }
+    }
+
+    // resets the menu selection upon entry to this page:
+    function resetMenu() {
+        document.gomenu.selector.selectedIndex = 2;
+    }
 </script>
 </body>
 </html>
