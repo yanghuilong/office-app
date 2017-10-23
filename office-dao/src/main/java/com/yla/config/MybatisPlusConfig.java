@@ -72,7 +72,7 @@ public class MybatisPlusConfig implements TransactionManagementConfigurer{
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
         MybatisSqlSessionFactoryBean factory = new MybatisSqlSessionFactoryBean();
         factory.setDataSource(dataSource);
-        factory.setVfs(DefaultVFS.class);
+        factory.setVfs(SpringBootVFS.class);
         GlobalConfiguration globalConfiguration = new GlobalConfiguration();
         globalConfiguration.setDbType(DBType.MYSQL.getDb());
         globalConfiguration.setIdType(0);
