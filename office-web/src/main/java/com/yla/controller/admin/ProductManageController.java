@@ -15,13 +15,12 @@ import org.springframework.web.bind.annotation.RequestParam;
  * 后台产品管理 Controller
  */
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/admin/product")
 public class ProductManageController {
 
 
-    @GetMapping("/to/product")
-    public String toProductAddPage(@RequestParam("menu") String menu, Model model) {
-        model.addAttribute("menu", menu);
+    @GetMapping("/to/add")
+    public String toProductAddPage() {
         return "/admin/product/addProduct";
     }
 }
