@@ -19,8 +19,6 @@ public class MyWebAppConfigurer implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/res/**").addResourceLocations("/WEB-INF/resources/");
         registry.addResourceHandler("/res/images/**").addResourceLocations("/WEB-INF/resources/images/");
-        registry.addResourceHandler("/res/um/**").addResourceLocations("/WEB-INF/jsp/um/");
-
         registry.addResourceHandler("/res/admin/**").addResourceLocations("/WEB-INF/resources/admin/");
     }
 

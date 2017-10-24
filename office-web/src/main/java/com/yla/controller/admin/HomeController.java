@@ -22,8 +22,7 @@ public class HomeController {
      * @return
      */
     @GetMapping("/home")
-    public String toHomePage(@RequestParam("menu") String menu, Model model) {
-        model.addAttribute("menu",menu);
+    public String toHomePage() {
         return "/admin/home";
     }
 }
