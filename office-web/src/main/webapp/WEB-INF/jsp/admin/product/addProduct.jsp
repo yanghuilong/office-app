@@ -43,7 +43,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Forms</h1>
+                    <h4 class="page-header">新增产品</h4>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -52,7 +52,11 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Basic Form Elements
+                            <ol class="breadcrumb">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Library</a></li>
+                                <li class="active">Data</li>
+                            </ol>
                         </div>
                         <div class="panel-body">
                             <div class="row">
