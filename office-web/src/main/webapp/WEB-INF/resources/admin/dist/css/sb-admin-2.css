@@ -432,3 +432,22 @@ table.dataTable thead .sorting:after {
     border-left-width: 0;
   }
 }
+
+/*customer */
+.breadcrumb {
+  margin-bottom: 0px;
+}
+.form-horizontal .form-group {
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 0;
+}
+.form-horizontal .form-group:last-child {
+  border-bottom: 0;
+}
+.form-horizontal .control-label {
+  padding-top: 15px;
+}
+.form-horizontal .controls {
+  padding: 10px 0;
+}
