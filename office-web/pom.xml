@@ -49,6 +49,7 @@
             <scope>provided</scope>
         </dependency>
 
+        <!--ueditor 支持-->
         <dependency>
             <groupId>com.baidu.ueditor</groupId>
             <artifactId>ueditor</artifactId>

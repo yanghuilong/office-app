@@ -1,6 +1,7 @@
 package com.yla.controller;
 
 import com.yla.entity.User;
+import com.yla.oss.properties.OSSConfigationProperties;
 import com.yla.service.user.UserService;
 import com.yla.utils.IDWorker;
 import org.apache.ibatis.javassist.NotFoundException;
@@ -26,6 +27,9 @@ public class IndexController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private OSSConfigationProperties ossConfigationProperties;
 
     @RequestMapping("/")
     public String welcome(Map<String, Object> model) {
