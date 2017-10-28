@@ -103,8 +103,15 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <label for="uploadImage" class="col-sm-2 control-label">产品图片</label>
+                                            <div class="col-sm-6 controls">
+                                                <jsp:include page="../common/inputFile.jsp"></jsp:include>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="productTitle" class="col-sm-2 control-label">产品描述</label>
                                             <div class="col-sm-6 controls">
+                                                <%--ue 控件--%>
                                                 <jsp:include page="../../um/um.jsp" flush="true"></jsp:include>
                                             </div>
                                         </div>
