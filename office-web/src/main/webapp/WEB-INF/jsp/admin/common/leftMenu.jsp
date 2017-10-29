@@ -258,6 +258,9 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
+                    <a href="${pageContext.request.contextPath}/admin/menu/mgr"><i class=" fa fa-th-list  fa-fw"></i> 菜单管理</a>
+                </li>
+                <li>
                     <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
                 </li>
                 <li>

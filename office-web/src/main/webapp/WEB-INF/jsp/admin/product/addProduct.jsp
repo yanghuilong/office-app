@@ -23,6 +23,7 @@
 
     <!-- Custom Fonts -->
     <link href="${pageContext.request.contextPath}/res/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -146,7 +147,8 @@
 
     </div>
     <!-- /#wrapper -->
-
+    <script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+    <script src="${pageContext.request.contextPath}/res/admin/bussiness/utils.js"></script>
     <!-- Metis Menu Plugin JavaScript -->
     <script src="${pageContext.request.contextPath}/res/admin/vendor/metisMenu/metisMenu.min.js"></script>
 
