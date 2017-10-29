@@ -7,9 +7,11 @@ import com.yla.service.menu.OfficeMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,7 +37,20 @@ public class MenuManageController {
     @ResponseBody
     public ResponseMessage selectList(OfficeMenu officeMenu) throws BusinessException {
         List<OfficeMenu> officeMenuList = officeMenuService.selectMenuList(officeMenu);
-        System.out.println(12);
         return ResponseMessage.ok(officeMenuList);
+    }
+
+
+    @PostMapping("/menu/insert")
+    @ResponseBody
+    public ResponseMessage insertMenu(OfficeMenu officeMenu) throws BusinessException {
+        if (officeMenu == null)
+            throw new BusinessException("insertMenu param is null");
+        officeMenu.setCreatedDate(new Date());
+        boolean b = officeMenuService.insert(officeMenu);
+        if (b)
+            return ResponseMessage.ok();
+        else
+            return ResponseMessage.error(0,"insert fail");
     }
 }

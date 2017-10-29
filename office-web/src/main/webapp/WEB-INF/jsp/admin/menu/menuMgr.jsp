@@ -66,10 +66,10 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-sm-offset-0 col-sm-3" style="margin-top: 15px; margin-bottom: 15px">
+                                <div class="col-sm-offset-0 col-sm-12" style="margin-top: 15px; margin-bottom: 15px">
                                     <!-- Single button -->
-                                    <div class="btn-group">
-                                        <button type="button" id="addMenuBtn" class="btn btn-default">
+                                    <p>
+                                        <button type="button" id="addMenuBtn" class="btn btn-default"  data-toggle="modal">
                                             新增菜单
                                         </button>
                                         <button type="button" id="editMenuBtn" class="btn btn-default">
@@ -78,12 +78,12 @@
                                         <button type="button" id="removeMenuBtn" class="btn btn-default">
                                             移除菜单
                                         </button>
-                                    </div>
+                                    </p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-12" id="treeGrid">
-
+                                <div class="col-sm-12" style="padding-right: 15px">
+                                    <div id="treeGrid"></div>
                                 </div>
                             </div>
                             <!-- /.row (nested) -->
@@ -97,16 +97,83 @@
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
-
     </div>
+    <!-- Modal  新增菜单Modal-->
+    <div class="modal fade" id="addMenuModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">新增菜单</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <form class="form-horizontal" id="menuForm" action="${pageContext.request.contextPath}/admin/menu/insert" method="post">
+                                <div class="form-group">
+                                    <label for="parentMenuName" class="col-sm-4 control-label">父级菜单</label>
+                                    <div class="col-sm-8 controls">
+                                        <input type="text" class="form-control" id="parentMenuName" disabled="disabled" name="parentMenuName" placeholder="">
+                                        <input type="hidden" class="form-control" id="parentID" name="parentID" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="menuName" class="col-sm-4 control-label">菜单名称</label>
+                                    <div class="col-sm-8 controls">
+                                        <input type="text" class="form-control" id="menuName" name="menuName" required="required" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="menuURL" class="col-sm-4 control-label">菜单URL</label>
+                                    <div class="col-sm-8 controls">
+                                        <input type="text" class="form-control" id="menuURL" name="menuURL" required="required" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="menuIcon" class="col-sm-4 control-label">菜单图标</label>
+                                    <div class="col-sm-8 controls">
+                                        <input type="text" class="form-control" id="menuIcon" name="menuIcon" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="menuCode" class="col-sm-4 control-label">菜单编码</label>
+                                    <div class="col-sm-8 controls">
+                                        <input type="text" class="form-control" id="menuCode" name="menuCode" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="menuIndex" class="col-sm-4 control-label">排序编号</label>
+                                    <div class="col-sm-8 controls">
+                                        <input type="text" class="form-control" id="menuIndex" name="menuIndex" placeholder="">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="menuCofirmBtn">确定</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
     <!-- /#wrapper -->
     <script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
 
     <%-- jqwidgets --%>
     <script type="text/javascript" src="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/jqxcore.js"></script>
-    <%--<script type="text/javascript" src="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/jqxdatatable.js"></script>--%>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/jqxtreegrid.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/jqxdatatable.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/jqxtreegrid.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/res/js/jquery.form.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/res/js/jquery.validate.min.js"></script>
+    <%--<script type="text/javascript" src="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/jqxdatatable.js"></script>--%>
 
     <!-- Custom Theme JavaScript -->
     <script src="${pageContext.request.contextPath}/res/admin/bussiness/utils.js"></script>

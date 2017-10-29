@@ -437,14 +437,6 @@ table.dataTable thead .sorting:after {
 .breadcrumb {
   margin-bottom: 0px;
 }
-.form-horizontal .form-group {
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #eeeeee;
-  margin-bottom: 0;
-}
-.form-horizontal .form-group:last-child {
-  border-bottom: 0;
-}
 .form-horizontal .control-label {
   padding-top: 15px;
 }
