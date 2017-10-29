@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yla.mapper.OfficeMenuMapper">
+
+    <resultMap id="menuResultMapper" type="com.yla.entity.OfficeMenu">
+        <id column="ID" property="id" jdbcType="INTEGER"/>
+        <result column="MenuName" property="menuName" jdbcType="VARCHAR"/>
+        <result column="MenuURL" property="menuURL" jdbcType="VARCHAR"/>
+        <result column="MenuIcon" property="menuIcon" jdbcType="VARCHAR"/>
+        <result column="MenuCode" property="menuCode" jdbcType="VARCHAR"/>
+        <result column="MenuIndex" property="menuIndex" jdbcType="INTEGER"/>
+        <result column="ParentID" property="parentID" jdbcType="INTEGER"/>
+        <result column="CreatedDate" property="createdDate" jdbcType="TIMESTAMP"/>
+        <collection property="officeMenus" ofType="com.yla.entity.OfficeMenu" javaType="ArrayList" column="id" select="selectChildrenMenu" />
+    </resultMap>
+
+    <select id="selectChildrenMenu" resultMap="menuResultMapper" parameterType="int">
+        SELECT
+            c.ID,
+            c.MenuName,
+            c.MenuURL,
+            c.MenuIcon,
+            c.MenuCode,
+            c.MenuIndex,
+            c.ParentID,
+            c.CreatedDate
+        FROM officemenu c WHERE c.ParentID = #{id} ORDER BY c.CreatedDate DESC
+    </select>
+
+    <select id="selectMenuList" resultMap="menuResultMapper" parameterType="com.yla.entity.OfficeMenu">
+        SELECT
+            m.ID,
+            m.MenuName,
+            m.MenuURL,
+            m.MenuIcon,
+            m.MenuCode,
+            m.MenuIndex,
+            m.ParentID,
+            m.CreatedDate
+        FROM officemenu m WHERE m.ParentID is NULL ORDER BY m.CreatedDate DESC
+    </select>
+</mapper>

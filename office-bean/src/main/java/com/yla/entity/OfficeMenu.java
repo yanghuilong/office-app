@@ -3,6 +3,7 @@ package com.yla.entity;
 import com.yla.entity.common.AbstractSampleEntity;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA
@@ -20,6 +21,11 @@ public class OfficeMenu extends AbstractSampleEntity<Integer> {
     private Integer menuIndex;
     private Integer parentID;
     private Date createdDate;
+
+    /**
+     * 子 菜单集合
+     */
+    private List<OfficeMenu> officeMenus;
 
 
     public String getMenuName() {
@@ -83,5 +89,13 @@ public class OfficeMenu extends AbstractSampleEntity<Integer> {
     public OfficeMenu setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
         return this;
+    }
+
+    public List<OfficeMenu> getOfficeMenus() {
+        return officeMenus;
+    }
+
+    public void setOfficeMenus(List<OfficeMenu> officeMenus) {
+        this.officeMenus = officeMenus;
     }
 }

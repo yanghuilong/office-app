@@ -24,9 +24,10 @@
     <!-- Custom Fonts -->
     <link href="${pageContext.request.contextPath}/res/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <%-- tree view --%>
-    <link href="${pageContext.request.contextPath}/res/admin/vendor/bootstrap-treeview/bootstrap-treeview.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+
+    <link href="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/styles/jqx.base.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/styles/jqx.bootstrap.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -34,6 +35,9 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>s
     <![endif]-->
 
+    <script>
+        var webPath = '${pageContext.request.contextPath}';
+    </script>
 </head>
 
 <body>
@@ -78,7 +82,9 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-offset-0 col-sm-3" id="tree"></div>
+                                <div class="col-sm-12" id="treeGrid">
+
+                                </div>
                             </div>
                             <!-- /.row (nested) -->
                         </div>
@@ -95,8 +101,14 @@
     </div>
     <!-- /#wrapper -->
     <script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+
+    <%-- jqwidgets --%>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/jqxcore.js"></script>
+    <%--<script type="text/javascript" src="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/jqxdatatable.js"></script>--%>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/jqxtreegrid.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/res/admin/vendor/jqwidgets/jqxdata.js"></script>
+
     <!-- Custom Theme JavaScript -->
-    <script src="${pageContext.request.contextPath}/res/admin/vendor/bootstrap-treeview/bootstrap-treeview.js"></script>
     <script src="${pageContext.request.contextPath}/res/admin/bussiness/utils.js"></script>
     <script src="${pageContext.request.contextPath}/res/admin/bussiness/menu/menu.js"></script>
 </body>

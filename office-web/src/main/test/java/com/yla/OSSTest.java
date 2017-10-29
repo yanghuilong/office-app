@@ -2,6 +2,7 @@ package com.yla;
 
 import com.aliyun.oss.OSSClient;
 import com.yla.oss.properties.OSSConfigationProperties;
+import com.yla.service.menu.OfficeMenuService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,10 @@ public class OSSTest {
     @Autowired
     private OSSConfigationProperties ossConfigationProperties;
 
+
+    @Autowired
+    private OfficeMenuService officeMenuService;
+
     // key Hydrangeas.jpg
     @Test
     public void oSSClient() throws ParseException {
@@ -36,5 +41,12 @@ public class OSSTest {
         // 生成URL
         URL url = client.generatePresignedUrl(ossConfigationProperties.getBucketName(), key, expiration);
         System.out.println("signed url for getObject: " + url.toString());
+    }
+
+
+    @Test
+    public void officeMenuServiceTest() {
+        officeMenuService.selectMenuList(null);
+        System.out.println(2);
     }
 }
