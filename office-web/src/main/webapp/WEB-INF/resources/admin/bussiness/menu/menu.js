@@ -58,7 +58,7 @@
                 }
             });
             $("#menuForm").submit()
-
+            $("#addMenuModal").modal("hide")
         })
 
 

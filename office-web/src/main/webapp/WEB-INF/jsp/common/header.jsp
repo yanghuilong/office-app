@@ -29,7 +29,16 @@
         </div><!-- END: row -->
         <!--BEGIN: menu-->
         <nav id="menu">
-            <jsp:include page="menu.jsp"></jsp:include>
-        </nav><!--END: menu-->
+            <ul>
+                <jsp:include page="menu.jsp"></jsp:include>
+            </ul>
+        </nav>
+        <!--END: menu-->
     </div>
 </header>
+<script src="https://cdn.bootcss.com/superfish/1.7.9/js/superfish.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/res/js/hoverIntent.js"></script>
+<script>
+    //Menu
+    jQuery('#menu > ul').superfish();
+</script>

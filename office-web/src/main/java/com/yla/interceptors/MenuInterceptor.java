@@ -28,10 +28,10 @@ public class MenuInterceptor implements HandlerInterceptor  {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if (request.getSession().getAttribute("menu") == null) {
+        if (request.getAttribute("menu") == null) {
             LogUtils.getLog(this.getClass()).debug("加载菜单数据。。。");
             List<OfficeMenu> officeMenuList = SpringContextUtil.getApplicationContext().getBean(OfficeMenuService.class).selectMenuList(null);
-            request.getSession().setAttribute("menu",officeMenuList);
+            request.setAttribute("menu",officeMenuList);
         }
         return true;
     }
