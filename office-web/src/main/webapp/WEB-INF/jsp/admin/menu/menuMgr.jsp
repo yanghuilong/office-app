@@ -113,8 +113,9 @@
                                 <div class="form-group">
                                     <label for="parentMenuName" class="col-sm-4 control-label">父级菜单</label>
                                     <div class="col-sm-8 controls">
-                                        <input type="text" class="form-control" id="parentMenuName" disabled="disabled" name="parentMenuName" placeholder="">
+                                        <input type="text" class="form-control" id="parentMenuName" readonly="readonly" name="parentMenuName" placeholder="">
                                         <input type="hidden" class="form-control" id="parentID" name="parentID" />
+                                        <input type="hidden" class="form-control" id="menuId" name="id" />
                                     </div>
                                 </div>
                                 <div class="form-group">

@@ -12,6 +12,7 @@ import java.util.Map;
  * Time: 16:17
  */
 public abstract class AbstractSampleEntity<PK> implements GenericEntity<PK> {
+
     private PK id;
 
     @TableField(exist = false)

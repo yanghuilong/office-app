@@ -24,7 +24,7 @@
             c.MenuIndex,
             c.ParentID,
             c.CreatedDate
-        FROM officemenu c WHERE c.ParentID = #{id} ORDER BY c.CreatedDate DESC
+        FROM officemenu c WHERE c.ParentID = #{id} ORDER BY c.MenuIndex DESC
     </select>
 
     <select id="selectMenuList" resultMap="menuResultMapper" parameterType="com.yla.entity.OfficeMenu">
@@ -37,6 +37,9 @@
             m.MenuIndex,
             m.ParentID,
             m.CreatedDate
-        FROM officemenu m WHERE m.ParentID is NULL ORDER BY m.CreatedDate DESC
+        FROM officemenu m WHERE 1=1
+            <if test="parentID == -1">AND m.ParentID is NULL</if>
+            <if test="id != null" > AND m.ID = #{id} </if>
+        ORDER BY m.MenuIndex DESC
     </select>
 </mapper>
