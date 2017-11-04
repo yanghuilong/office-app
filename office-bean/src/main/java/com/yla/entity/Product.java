@@ -1,5 +1,6 @@
 package com.yla.entity;
 
+import com.baomidou.mybatisplus.annotations.TableName;
 import com.yla.entity.common.AbstractSampleEntity;
 
 import java.math.BigDecimal;
@@ -11,6 +12,7 @@ import java.util.Date;
  * Date: 2017/10/23
  * Time: 9:28
  */
+@TableName("product")
 public class Product extends AbstractSampleEntity<Integer> {
 
 
@@ -32,6 +34,29 @@ public class Product extends AbstractSampleEntity<Integer> {
     private Boolean isSpecial;
     private BigDecimal productSpecialPrice;
     private Integer productOrderBy;
+
+    /* 商品的实际大小图片，如进入该商品页时介绍商品属性所显示的大图片 */
+    private String productImgURL;
+    /* 应该是上传的商品的原始图片 */
+    private String originalImgURL;
+
+    public String getProductImgURL() {
+        return productImgURL;
+    }
+
+    public Product setProductImgURL(String productImgURL) {
+        this.productImgURL = productImgURL;
+        return this;
+    }
+
+    public String getOriginalImgURL() {
+        return originalImgURL;
+    }
+
+    public Product setOriginalImgURL(String originalImgURL) {
+        this.originalImgURL = originalImgURL;
+        return this;
+    }
 
     public Integer getProductTagID() {
         return productTagID;

@@ -1,11 +1,13 @@
 package com.yla.controller.admin;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.yla.entity.OfficeMenu;
 import com.yla.exception.BusinessException;
 import com.yla.message.ResponseMessage;
 import com.yla.service.menu.OfficeMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,8 +29,17 @@ public class MenuManageController {
     private OfficeMenuService officeMenuService;
 
     @GetMapping("/menu/mgr")
-    public String toMenuMgrPage(){
+    public String toMenuMgrPage() {
         return "/admin/menu/menuMgr";
+    }
+
+    @GetMapping("/menu/edit/{id}")
+    public String toMenuMgrEditPage(@PathVariable Integer id, Model model) {
+        if (id == null)
+            throw new BusinessException("参数错误!");
+        OfficeMenu officeMenu = officeMenuService.selectById(id);
+        model.addAttribute("editMenu", officeMenu);
+        return "/admin/menu/editMenu";
     }
 
     @GetMapping("/menu/list")
@@ -50,7 +61,7 @@ public class MenuManageController {
         if (b)
             return ResponseMessage.ok();
         else
-            return ResponseMessage.error(0,"insert fail");
+            return ResponseMessage.error(0, "insert fail");
     }
 
 
@@ -71,18 +82,18 @@ public class MenuManageController {
 
     @GetMapping("/menu/delete/{id}")
     @ResponseBody
-    public ResponseMessage deleteMenuByID(@PathVariable("id") String id) throws BusinessException{
+    public ResponseMessage deleteMenuByID(@PathVariable("id") String id) throws BusinessException {
         if (StringUtils.isEmpty(id)) {
             throw new BusinessException("ID is null");
         }
         OfficeMenu officeMenu = new OfficeMenu();
         officeMenu.setId(Integer.valueOf(id));
         List<OfficeMenu> officeMenus = officeMenuService.selectMenuList(officeMenu);
-        if (officeMenus == null || officeMenus.size()!=1) {
+        if (officeMenus == null || officeMenus.size() != 1) {
             throw new BusinessException("此条数据不存在!");
         }
 
-        if (officeMenus.get(0).getOfficeMenus().size()>1) {
+        if (officeMenus.get(0).getOfficeMenus().size() > 1) {
             throw new BusinessException("请删除此菜单下面的子菜单!");
         }
         boolean b = officeMenuService.deleteById(Integer.valueOf(id));

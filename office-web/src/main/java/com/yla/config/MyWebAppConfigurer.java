@@ -1,8 +1,6 @@
 package com.yla.config;
 
 import com.yla.interceptors.MenuInterceptor;
-import com.yla.oss.properties.OSSConfigationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -30,4 +28,5 @@ public class MyWebAppConfigurer implements WebMvcConfigurer {
         HandlerInterceptor handlerInterceptor = new MenuInterceptor();
         registry.addInterceptor(handlerInterceptor).addPathPatterns("/**").excludePathPatterns("/res/**");
     }
+
 }

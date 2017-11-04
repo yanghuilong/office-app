@@ -1,5 +1,6 @@
 package com.yla.entity;
 
+import com.baomidou.mybatisplus.annotations.TableName;
 import com.yla.entity.common.AbstractSampleEntity;
 
 import java.util.Date;
@@ -10,6 +11,7 @@ import java.util.Date;
  * Date: 2017/10/19
  * Time: 15:59
  */
+@TableName(value = "user")
 public class User extends AbstractSampleEntity<Integer> {
 
 

@@ -1,5 +1,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<input type="file" id="uploadImage" name="uploadImage"  multiple />
+<style media="all">
+    .kv-avatar .krajee-default.file-preview-frame,.kv-avatar .krajee-default.file-preview-frame:hover {
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        text-align: center;
+    }
+    .kv-avatar {
+        display: inline-block;
+    }
+    .kv-avatar .file-input {
+        display: table-cell;
+        width: 213px;
+    }
+    .kv-reqd {
+        color: red;
+        font-family: monospace;
+        font-weight: normal;
+    }
+</style>
+<input type="file" id="uploadImage" name="uploadImage" multiple="multiple"/>
 <script src="https://cdn.bootcss.com/bootstrap-fileinput/4.4.5/js/fileinput.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap-fileinput/4.4.5/js/plugins/piexif.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap-fileinput/4.4.5/js/plugins/purify.min.js"></script>
@@ -17,6 +38,12 @@
         header[0].appendChild(link)
     }
     $(document).ready(function () {
-        $("#uploadImage").fileinput({'showUpload':false, 'previewFileType':'any'});
+        // 定义bootstrap input file Footer 底部模板
+        $("#uploadImage").fileinput({
+            'showUpload':false,
+            'previewFileType':'any',
+            maxFileCount: 4,
+            autoReplace: false
+        });
     })
 </script>

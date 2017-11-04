@@ -1,5 +1,6 @@
 package com.yla.entity;
 
+import com.baomidou.mybatisplus.annotations.TableName;
 import com.yla.entity.common.AbstractSampleEntity;
 
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.List;
  * Date: 2017/10/28
  * Time: 10:39
  */
+@TableName("office_menu")
 public class OfficeMenu extends AbstractSampleEntity<Integer> {
 
     private static final long serialVersionUID = -3801097900615534552L;
@@ -27,6 +29,17 @@ public class OfficeMenu extends AbstractSampleEntity<Integer> {
      */
     private List<OfficeMenu> officeMenus;
 
+    private OfficeMenu parentMenu;
+
+
+    public OfficeMenu getParentMenu() {
+        return parentMenu;
+    }
+
+    public OfficeMenu setParentMenu(OfficeMenu parentMenu) {
+        this.parentMenu = parentMenu;
+        return this;
+    }
 
     public String getMenuName() {
         return menuName;

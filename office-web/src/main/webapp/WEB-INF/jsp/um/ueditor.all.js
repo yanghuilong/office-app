@@ -19951,7 +19951,7 @@ UE.plugins['table'] = function () {
         'tdvalign':'top',
         'cursorpath':me.options.UEDITOR_HOME_URL + "themes/default/images/cursor_",
         'tableDragable':false,
-        'classList':["ue-table-interlace-color-single","ue-table-interlace-color-double"]
+        'classList':["ueditor-table-interlace-color-single","ueditor-table-interlace-color-double"]
     });
     me.getUETable = getUETable;
     var commands = {
@@ -19993,7 +19993,7 @@ UE.plugins['table'] = function () {
                 'caption{border:1px dashed #DDD;border-bottom:0;padding:3px;text-align:center;}' +
                 'th{border-top:1px solid #BBB;background-color:#F7F7F7;}' +
                 'table tr.firstRow th{border-top-width:2px;}' +
-                '.ue-table-interlace-color-single{ background-color: #fcfcfc; } .ue-table-interlace-color-double{ background-color: #f7faff; }' +
+                '.ueditor-table-interlace-color-single{ background-color: #fcfcfc; } .ueditor-table-interlace-color-double{ background-color: #f7faff; }' +
                 'td p{margin:0;padding:0;}', me.document);
 
         var tableCopyList, isFullCol, isFullRow;
@@ -23965,7 +23965,7 @@ UE.plugin.register('autosave', function (){
                 if ( me.key ) {
                     key = me.key + _suffix;
                 } else {
-                    key = ( me.container.parentNode.id || 'ue-common' ) + _suffix;
+                    key = ( me.container.parentNode.id || 'ueditor-common' ) + _suffix;
                 }
 
                 //页面地址+编辑器ID 保持唯一

@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -106,13 +108,13 @@
                                         <div class="form-group">
                                             <label for="uploadImage" class="col-sm-2 control-label">产品图片</label>
                                             <div class="col-sm-6 controls">
-                                                <jsp:include page="../common/inputFile.jsp"></jsp:include>
+                                                <c:import url="../common/inputFile.jsp"></c:import>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="productTitle" class="col-sm-2 control-label">产品描述</label>
                                             <div class="col-sm-6 controls">
-                                                <%--ue 控件--%>
+                                                <%--ueditor 控件--%>
                                                 <jsp:include page="../../um/um.jsp" flush="true"></jsp:include>
                                             </div>
                                         </div>
