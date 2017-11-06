@@ -81,9 +81,8 @@ public class UeditServiceImpl implements UEditorService{
             ossClient.putObject(ossConfigationProperties.getBucketName(), key, uEditorFileParam.getInputStream());
 
             UEditorImageResult uEditorImageResult = new UEditorImageResult();
-            //GeneratePresignedUrlRequest genericRequest = new GeneratePresignedUrlRequest(ossConfigationProperties.getBucketName(),key);
 
-            Date expiration = new Date(new Date().getTime() + 3600l * 1000 * 24 * 365 * 10);
+            Date expiration = new Date(new Date().getTime() + 3600L * 1000 * 24 * 365 * 10);
             uEditorImageResult.setName(uEditorFileParam.getFileName())
                     .setOriginal(uEditorFileParam.getOriginalFilename())
                     .setState("SUCCESS")
