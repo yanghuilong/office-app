@@ -1,14 +1,13 @@
 package com.yla.controller.ueditor;
 
 import com.yla.message.ResponseMessage;
-import com.yla.service.ueditor.DefaultUEditorRequest;
-import com.yla.service.ueditor.UEditorRequest;
 import com.yla.service.ueditor.UEditorService;
+import com.yla.service.ueditor.bean.UEditorFileParam;
+import com.yla.service.ueditor.bean.UEditorImageResult;
 import com.yla.service.ueditor.ueenum.UEditorActionEnum;
-import org.springframework.http.HttpRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -34,7 +33,11 @@ import java.util.List;
 public class UEditorController {
 
 
-    @GetMapping("/main")
+    @Autowired
+    private UEditorService uEditorService;
+
+
+    @RequestMapping("/main")
     @ResponseBody
     public Object ueControllerMain(HttpServletRequest request) throws IOException {
 
@@ -43,7 +46,7 @@ public class UEditorController {
                 request.getSession().getServletContext());
         //检查form中是否有enctype="multipart/form-data"
 
-        List<InputStream> inputStreams = new ArrayList<>();
+        List<UEditorFileParam> uEditorFileParams = new ArrayList<>();
 
         if (multipartResolver.isMultipart(request)) {
             //将request变成多部分request
@@ -55,7 +58,18 @@ public class UEditorController {
                 //一次遍历所有文件
                 MultipartFile file = multiRequest.getFile(iter.next().toString());
                 if (file != null) {
-                    inputStreams.add(file.getInputStream());
+                    String fileName = file.getOriginalFilename();
+                    String suffix = fileName.substring(fileName.lastIndexOf(".") + 1);
+                    UEditorFileParam uEditorFileParam = new UEditorFileParam();
+                    uEditorFileParam.setFile(null)
+                            .setInputStream(file.getInputStream())
+                            .setFileName(file.getName())
+                            .setOriginalFilename(file.getOriginalFilename())
+                            .setFileLength(file.getSize())
+                            .setContentType(file.getContentType())
+                            .setType(suffix);
+
+                    uEditorFileParams.add(uEditorFileParam);
                 }
 
             }
@@ -65,11 +79,15 @@ public class UEditorController {
         if (StringUtils.isEmpty(action)){
             return ResponseMessage.error("param is null");
         }
-        DefaultUEditorRequest uEditorRequest = new DefaultUEditorRequest();
-        uEditorRequest.setAcion(action);
-        uEditorRequest.setInputStreams(inputStreams);
-        UEditorService uEditorService = new UEditorService(uEditorRequest.build(), uEditorRequest);
-        uEditorService.exc();
+        if (UEditorActionEnum.getUEditorAction(action).getValue() == 4) {
+            return uEditorService.getConfigAction().toJSONString();
+        } else if (UEditorActionEnum.getUEditorAction(action).getValue() == 0){
+            List<UEditorImageResult> uEditorImageResults = uEditorService.uploadImage(uEditorFileParams);
+            if (uEditorImageResults.size() == 1) {
+                return uEditorImageResults.get(0);
+            }
+            return uEditorImageResults;
+        }
         return null;
     }
 }

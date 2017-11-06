@@ -1,7 +1,11 @@
 package com.yla.service.ueditor;
 
-import com.yla.exception.BusinessException;
-import com.yla.service.ueditor.state.UEditorState;
+import com.alibaba.fastjson.JSONObject;
+import com.yla.service.ueditor.bean.UEditorFileParam;
+import com.yla.service.ueditor.bean.UEditorImageResult;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA
@@ -9,31 +13,9 @@ import com.yla.service.ueditor.state.UEditorState;
  * Date: 2017/11/4
  * Time: 17:05
  */
-public class UEditorService {
+public interface UEditorService {
 
-    private UEditorState uEditorState;
-    private UEditorRequest uEditorRequest;
+    JSONObject getConfigAction();
 
-    public UEditorService(UEditorState uEditorState, UEditorRequest uEditorRequest) {
-        this.uEditorState = uEditorState;
-        this.uEditorRequest = uEditorRequest;
-    }
-
-
-    public void exc() {
-        if (uEditorState == null)
-            throw new BusinessException("UEditorService UEditorState is null");
-        Object o = uEditorState.UEditorStateHanlder(uEditorRequest);
-    }
-
-
-
-    public UEditorState getuEditorState() {
-        return uEditorState;
-    }
-
-    public UEditorService setuEditorState(UEditorState uEditorState) {
-        this.uEditorState = uEditorState;
-        return this;
-    }
+    List<UEditorImageResult> uploadImage(List<UEditorFileParam> uEditorFileParams) throws IOException;
 }

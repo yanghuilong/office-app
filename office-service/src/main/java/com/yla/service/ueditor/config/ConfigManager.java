@@ -2,6 +2,9 @@ package com.yla.service.ueditor.config;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.yla.exception.BusinessException;
+import com.yla.utils.LogUtils;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.HashMap;
@@ -14,33 +17,23 @@ import java.util.Map;
  * Time: 19:21
  */
 public final class ConfigManager {
-    private final String rootPath;
-    private final String originalPath;
-    private final String contextPath;
-    private static final String configFileName = "config.json";
+    public static final Logger LOGGER = LogUtils.getLog(ConfigManager.class);
+    public static final String configFileName = "config.json";
     private String parentPath = null;
     private JSONObject jsonConfig = null;
-    private static final String SCRAWL_FILE_NAME = "scrawl";
-    private static final String REMOTE_FILE_NAME = "remote";
+    private String path = null;
 
-    private ConfigManager(String rootPath, String contextPath, String uri) throws FileNotFoundException, IOException {
-        rootPath = rootPath.replace("\\", "/");
-        this.rootPath = rootPath;
-        this.contextPath = contextPath;
-        if(contextPath.length() > 0) {
-            this.originalPath = this.rootPath + uri.substring(contextPath.length());
-        } else {
-            this.originalPath = this.rootPath + uri;
-        }
-
+    private ConfigManager(String path) throws FileNotFoundException, IOException {
+        path = path.replace("\\", "/");
+        this.path = path;
         this.initEnv();
     }
 
-    public static ConfigManager getInstance(String rootPath, String contextPath, String uri) {
+    public static ConfigManager getInstance(String path) {
         try {
-            return new ConfigManager(rootPath, contextPath, uri);
+            return new ConfigManager(path);
         } catch (Exception var4) {
-            return null;
+            throw new BusinessException(var4.getMessage());
         }
     }
 
@@ -102,13 +95,13 @@ public final class ConfigManager {
                 conf.put("count", Integer.valueOf(this.jsonConfig.getInteger("imageManagerListSize")));
         }
 
-        conf.put("savePath", savePath);
-        conf.put("rootPath", this.rootPath);
+        /*conf.put("savePath", savePath);
+        conf.put("rootPath", this.rootPath);*/
         return conf;
     }
 
-    private void initEnv() throws FileNotFoundException, IOException {
-        File file = new File(this.originalPath);
+    private void initEnv() throws IOException {
+        File file = new File(this.path);
         if(!file.isAbsolute()) {
             file = new File(file.getAbsolutePath());
         }
