@@ -254,6 +254,9 @@
                         <li>
                             <a href="${pageContext.request.contextPath}/admin/product/to/list">产品列表</a>
                         </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/admin/category/to/list">产品分类</a>
+                        </li>
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>

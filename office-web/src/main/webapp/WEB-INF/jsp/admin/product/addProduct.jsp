@@ -27,13 +27,15 @@
     <link href="${pageContext.request.contextPath}/res/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 
+    <link href="${pageContext.request.contextPath}/res/admin/vendor/webuploader/webuploader.css" rel="stylesheet" type="text/css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>s
     <![endif]-->
-
+    <script>
+        var webPath = '${pageContext.request.contextPath}';
+    </script>
 </head>
 
 <body>
@@ -62,36 +64,38 @@
                             </ol>
                         </div>
                         <div class="panel-body">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <form class="form-horizontal">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="productName" class="col-sm-2 control-label">产品名称</label>
-                                            <div class="col-sm-6 controls">
+                                            <div class="col-sm-8 controls">
                                                 <input type="text" class="form-control" id="productName" name="productName" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="productTitle" class="col-sm-2 control-label">产品标题</label>
-                                            <div class="col-sm-6 controls">
+                                            <div class="col-sm-8 controls">
                                                 <input type="text" class="form-control" id="productTitle" name="productTitle" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="productColor" class="col-sm-2 control-label">产品颜色</label>
-                                            <div class="col-sm-6 controls">
+                                            <div class="col-sm-8 controls">
                                                 <input type="text" class="form-control" id="productColor" name="productColor" placeholder="red, green ...">
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="productPrice" class="col-sm-2 control-label">产品价格</label>
-                                            <div class="col-sm-6 controls">
+                                            <div class="col-sm-8 controls">
                                                 <input type="text" class="form-control" id="productPrice" name="productPrice" placeholder="10.00">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label  class="col-sm-2 control-label">是否是特价商品</label>
-                                            <div class=" col-sm-6">
+                                            <div class=" col-sm-8">
                                                 <div class="checkbox controls">
                                                     <label>
                                                         <input type="radio" value="1" name="isSpecial"> &nbsp;是 <input type="radio" value="0" name="isSpecial"> &nbsp;否
@@ -101,40 +105,33 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="productSpecialPrice" class="col-sm-2 control-label">产品特价</label>
-                                            <div class="col-sm-6 controls">
+                                            <div class="col-sm-8 controls">
                                                 <input type="text" class="form-control" id="productSpecialPrice" name="productSpecialPrice" placeholder="10.00">
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="uploadImage" class="col-sm-2 control-label">产品图片</label>
-                                            <div class="col-sm-6 controls">
-                                                <c:import url="../common/inputFile.jsp"></c:import>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="productTitle" class="col-sm-2 control-label">产品描述</label>
-                                            <div class="col-sm-6 controls">
-                                                <%--ueditor 控件--%>
-                                                <jsp:include page="../../um/um.jsp" flush="true"></jsp:include>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-offset-2 col-sm-6">
-                                                <div class="checkbox controls">
-                                                    <label>
-                                                        <input type="checkbox"> Remember me
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-offset-2 col-sm-10 controls">
-                                                <button type="submit" class="btn btn-default">Sign in</button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="row">
+                                    <div class="form-group col-sm-12">
+                                        <label for="productTitle" class="col-sm-1 control-label">产品相册</label>
+                                        <div class="col-sm-10 controls">
+                                            <div id="uploadimg">
+                                                <div id="fileList" class="uploader-list"></div>
+                                                <div id="imgPicker">选择图片</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-sm-12">
+                                        <label for="productTitle" class="col-sm-1 control-label">产品描述</label>
+                                        <div class="col-sm-10 controls">
+                                            <%--ueditor 控件--%>
+                                            <jsp:include page="../../um/um.jsp" flush="true"></jsp:include>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                             <!-- /.row (nested) -->
                         </div>
                         <!-- /.panel-body -->
@@ -149,11 +146,9 @@
 
     </div>
     <!-- /#wrapper -->
+    <script src="${pageContext.request.contextPath}/res/admin/vendor/webuploader/webuploader.min.js"></script>
     <script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
     <script src="${pageContext.request.contextPath}/res/admin/bussiness/utils.js"></script>
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="${pageContext.request.contextPath}/res/admin/vendor/metisMenu/metisMenu.min.js"></script>
-
     <!-- Custom Theme JavaScript -->
     <script src="${pageContext.request.contextPath}/res/admin/bussiness/product/addProduct.js"></script>
 </body>
